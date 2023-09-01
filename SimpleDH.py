@@ -35,10 +35,10 @@ AlicePub = (G^AlicePriv % P)
 BobPub = (G^BobPriv % P)
 
 # Alice sends public value
-print("Alice  --( %i )--> Bob" % AlicePub)
+print("Alice  --( Here is my public integer %i )--> Bob" % AlicePub)
 
 # Bob sends public value
-print("Alice <--( %i )--  Bob" % BobPub)
+print("Alice <--( Her is my public integer %i )--  Bob" % BobPub)
 
 # Alice compute symmetric key
 AliceSecretKey = BobPub^AlicePriv % P
