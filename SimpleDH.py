@@ -1,5 +1,19 @@
 # Simple example of Diffie Hellman principle
 
+def encrypt(m, k):
+# XOR encryption
+    c = ""
+    for char in m:
+        c = c + chr(ord(char) ^ k)
+    return c
+
+def decrypt(c, k):
+    m = ""
+    for char in c:
+        m = m + chr(ord(char) ^ k)
+    return m
+
+
 # Alice and Bob agree in public using these numbers
 P=23
 G=9
@@ -31,4 +45,15 @@ print("Alice computed secret key: %i" % AliceSecretKey)
 # Bob compute symmetric key
 BobSecretKey = AlicePub^BobPriv % P
 print("Bob computed secret key: %i" % BobSecretKey)
+
+# Alice encrypt some text and send to Bob
+clearText = "Hi Bob!"
+print("Alice encrypt message with her secret key: %s" % clearText)
+encryptedText = encrypt(clearText, AliceSecretKey)
+print("Alice --(%s)--> Bob" % encryptedText)
+
+# Bob receive encryptet text from Alice and decrypt it with his secret key
+receivedClearText = decrypt(encryptedText, BobSecretKey)
+print("Bob decrypt message from Alice with his secret key: %s" % receivedClearText)
+
 
