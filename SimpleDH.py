@@ -15,9 +15,11 @@ def decrypt(c, k):
 
 
 # Alice and Bob agree in public using these numbers
+# 
+# In the theory of rings, a branch of abstract algebra, it is described as the group of units of the ring of integers modulo n. Here units refers to elements with a multiplicative inverse, which, in this ring, are exactly those coprime to n.
 P=23
 G=9
-print("Alice  --(Let use P=%i and G=%i)--> Bob" % (P,G))
+print("Alice  --(Let use P=%i and G=%i in multiplicative group of integers modulo P, where P is prime and where G is a primitve root modulo P)--> Bob" % (P,G))
 
 
 # Alice select a random private key
