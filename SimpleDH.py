@@ -15,6 +15,8 @@ def decrypt(c, k):
 
 
 # Alice and Bob agree in public using these numbers
+# P: Prime
+# G: Generator
 # The multiplicative group of integers modulo P, where P is prime and where G is a primitve root modulo P
 # In the theory of rings, a branch of abstract algebra, it is described as the group of units of the ring of integers modulo n. Here units refers to elements with a multiplicative inverse, which, in this ring, are exactly those coprime to n.
 P=23
